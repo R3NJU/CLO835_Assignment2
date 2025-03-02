@@ -5,10 +5,14 @@ metadata:
   labels:
     run: sql-pod
   name: sql-pod
+  namespace: sql
 spec:
   containers:
   - image: 638733641367.dkr.ecr.us-east-1.amazonaws.com/clo835-assignment2-sql:v1.0
     name: sql-pod
+    env:
+      - name: MYSQL_ROOT_PASSWORD
+        value: "pw"
     resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always

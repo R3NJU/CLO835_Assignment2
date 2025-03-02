@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+  namespace: flask
+spec:
+  selector:
+    run: flask-pod
+  ports:
+    - protocol: TCP
+      port: 8080         # Container Port
+      targetPort: 8080   # Pod Port
+      nodePort: 30081    # External Port (must be between 30000-32767)
+  type: NodePort         # Exposes externally

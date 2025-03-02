@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mysql-replicaset
+  namespace: sql
+  labels:
+    app: mysql
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - name: sql-pod
+          image: sql:v1.0
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "pw"
+          resources: {}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always

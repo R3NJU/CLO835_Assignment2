@@ -10,6 +10,17 @@ spec:
   containers:
   - image: 638733641367.dkr.ecr.us-east-1.amazonaws.com/clo835-assignment2-flask:v1.0
     name: flask-pod
+    env:
+      - name: DBHOST
+        value: "10.0.0.2"
+      - name: DBPORT
+        value: "3306"
+      - name: DBUSER
+        value: "root"
+      - name: DBPWD
+        value: "pw"
+      - name: APP_COLOR
+        value: "blue"
     resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always
