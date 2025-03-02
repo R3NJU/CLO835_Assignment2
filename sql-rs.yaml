@@ -19,13 +19,8 @@ spec:
       - name: ecr-secret
       containers:
         - name: sql-pod
-          image: "$(ECR_REGISTRY)/clo835-assignment2-sql:v1.0"
+          image: ECRURI/clo835-assignment2-sql:v1.0
           env:
-            - name: ECR_REGISTRY
-              valueFrom:
-                configMapKeyRef:
-                  name: ecr-config
-                  key: ECR_REGISTRY
             - name: MYSQL_ROOT_PASSWORD
               value: "pw"
           resources: {}

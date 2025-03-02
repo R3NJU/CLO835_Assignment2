@@ -19,13 +19,8 @@ spec:
       - name: ecr-secret
       containers:
         - name: flask-app
-          image: "$(ECR_REGISTRY)/clo835-assignment2-flask:v1.0"
+          image: ECRURI/clo835-assignment2-flask:v1.0
           env:
-            - name: ECR_REGISTRY
-              valueFrom:
-                configMapKeyRef:
-                  name: ecr-config
-                  key: ECR_REGISTRY
             - name: DBHOST
               value: "sql-service.sql.svc.cluster.local"
             - name: DBPORT

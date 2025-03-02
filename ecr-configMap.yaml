@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: ecr-config
-data:
-  ECR_REGISTRY: ""
