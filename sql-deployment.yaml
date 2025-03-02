@@ -19,8 +19,13 @@ spec:
         - name: ecr-secret
       containers:
         - name: sql-pod
-          image: 638733641367.dkr.ecr.us-east-1.amazonaws.com/clo835-assignment2-sql:v1.0
+          image: "$(ECR_REGISTRY)/clo835-assignment2-sql:v1.0"
           env:
+            - name: ECR_REGISTRY
+              valueFrom:
+                configMapKeyRef:
+                  name: ecr-config
+                  key: ECR_REGISTRY
             - name: MYSQL_ROOT_PASSWORD
               value: "pw"
           resources: {}
