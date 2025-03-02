@@ -7,6 +7,8 @@ metadata:
   name: sql-pod
   namespace: sql
 spec:
+  imagePullSecrets:
+  - name: ecr-secret
   containers:
   - image: 638733641367.dkr.ecr.us-east-1.amazonaws.com/clo835-assignment2-sql:v1.0
     name: sql-pod

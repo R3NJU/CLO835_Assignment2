@@ -5,6 +5,7 @@ metadata:
   namespace: sql
 spec:
   selector:
+    app: mysql
     run: sql-pod
   ports:
     - protocol: TCP
