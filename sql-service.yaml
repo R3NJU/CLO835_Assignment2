@@ -6,7 +6,6 @@ metadata:
 spec:
   selector:
     app: mysql
-    run: sql-pod
   ports:
     - protocol: TCP
       port: 3306    # ClusterIP port

@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   creationTimestamp: null
   labels:
-    run: sql-pod
+    app: mysql
   name: sql-pod
   namespace: sql
 spec:

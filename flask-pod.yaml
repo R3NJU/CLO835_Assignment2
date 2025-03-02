@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   creationTimestamp: null
   labels:
-    run: flask-pod
+    app: employees
   name: flask-pod
   namespace: flask
 spec:
